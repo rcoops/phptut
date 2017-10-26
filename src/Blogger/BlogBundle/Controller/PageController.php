@@ -20,4 +20,11 @@ class PageController extends Controller
         ));
     }
 
+//    public function loginAction()
+//    {
+//        return $this->render('FOSUserBundle:Security:login.html.twig', array(
+//            // ...
+//        ));
+//    }
+
 }

@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Album
  *
- * @ORM\Table(name="album")
+ * @ORM\Table(name="albums")
  * @ORM\Entity(repositoryClass="Blogger\BlogBundle\Repository\AlbumRepository")
  */
 class Album
@@ -174,11 +174,11 @@ class Album
     /**
      * Add user
      *
-     * @param \Blogger\BlogBundle\Entity\User $user
+     * @param \Blogger\BlogBundle\Entity\UserWS1 $user
      *
      * @return Album
      */
-    public function addUser(\Blogger\BlogBundle\Entity\User $user)
+    public function addUser(\Blogger\BlogBundle\Entity\UserWS1 $user)
     {
         $this->users[] = $user;
 
@@ -188,9 +188,9 @@ class Album
     /**
      * Remove user
      *
-     * @param \Blogger\BlogBundle\Entity\User $user
+     * @param \Blogger\BlogBundle\Entity\UserWS1 $user
      */
-    public function removeUser(\Blogger\BlogBundle\Entity\User $user)
+    public function removeUser(\Blogger\BlogBundle\Entity\UserWS1 $user)
     {
         $this->users->removeElement($user);
     }

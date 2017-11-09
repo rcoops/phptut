@@ -11,5 +11,30 @@ index:
 blogger_about:
     path: /about
     defaults: { _controller: BloggerBlogBundle:Page:about }
+    methods: [GET]
+
+blog_view:
+    path:     /view/{id}
+    defaults: { _controller: BloggerBlogBundle:Blog:view }
+    methods: [GET]
     requirements:
-        _method: GET
+        id: \d+
+
+blog_create:
+    path:     /create
+    defaults: { _controller: BloggerBlogBundle:Blog:create }
+    methods: [GET, POST]
+
+blog_edit:
+    path:     /edit/{id}
+    defaults: { _controller: BloggerBlogBundle:Blog:edit }
+    methods: [GET, POST]
+    requirements:
+        id: \d+
+
+blog_delete:
+    path:     /delete/{id}
+    defaults: { _controller: BloggerBlogBundle:Blog:delete }
+    methods: [GET, DELETE]
+    requirements:
+        id: \d+

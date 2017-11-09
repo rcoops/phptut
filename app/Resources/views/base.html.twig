@@ -38,6 +38,20 @@
                     <li><a href="{{ path('index') }}">Home</a></li>
                     <li><a href="{{ path('blogger_about') }}">About</a></li>
                     <li><a href="#">Contact</a></li>
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <li>
+                            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                            <a href="{{ path('fos_user_security_logout') }}">
+                                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                            </a>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a href="{{ path('fos_user_security_login') }}">
+                                {{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+                            </a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
